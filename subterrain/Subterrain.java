@@ -11,6 +11,15 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
+/**
+ * Subterrain
+ * 
+ * Main mod class
+ * 
+ * @author lolinder
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 @Mod(modid="Subterrain", name="Subterrain", version="0.0.1")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
