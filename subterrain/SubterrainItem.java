@@ -16,9 +16,6 @@ public class SubterrainItem extends Item {
 
 	public SubterrainItem(int id) {
 		super(id);
-		setMaxStackSize(64);
-		setCreativeTab(CreativeTabs.tabMisc);
-		setIconIndex(0);
 		setItemName("subterrainItem");
 	}
 

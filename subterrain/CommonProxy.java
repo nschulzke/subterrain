@@ -12,7 +12,7 @@ package lolinder.subterrain;
 public class CommonProxy {
 	public static String ITEMS_PNG = "/lolinder/subterrain/items.png";
 	public static String BLOCK_PNG = "/lolinder/subterrain/block.png";
-	
+
 	//To be overridden by ClientProxy
 	public void registerRenderers() {	}
 }

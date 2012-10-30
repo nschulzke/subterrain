@@ -1,5 +1,9 @@
 package lolinder.subterrain;
 
+import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.EnumToolMaterial;
+import net.minecraft.src.Item;
+import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -10,6 +14,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
  * Subterrain
@@ -24,24 +29,30 @@ import cpw.mods.fml.common.network.NetworkMod;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 
-        // The instance of your mod that Forge uses.
+	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 0, 15, 1.0F, 0, 0);
+	public static Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
+
+
+	// The instance of your mod that Forge uses.
 	@Instance("Generic")
 	public static Subterrain instance;
-	
+
 	// Says where the client and server 'proxy' code is loaded.
-	@SidedProxy(clientSide="tutorial.generic.client.ClientProxy", serverSide="tutorial.generic.CommonProxy")
+	@SidedProxy(clientSide="lolinder.subterrain.client.ClientProxy", serverSide="lolinder.subterrain.CommonProxy")
 	public static CommonProxy proxy;
-	
+
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		// Stub Method
 	}
-	
+
 	@Init
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
+		
+		LanguageRegistry.addName(flintTool, "Flint Tool");
 	}
-	
+
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		// Stub Method
