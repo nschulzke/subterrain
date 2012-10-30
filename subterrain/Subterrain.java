@@ -29,9 +29,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 
-	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 0, 15, 1.0F, 0, 0);
-	public static Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
-
+	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 16, 1.0F, 0, 0);
+	
+	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
 
 	// The instance of your mod that Forge uses.
 	@Instance("Generic")
