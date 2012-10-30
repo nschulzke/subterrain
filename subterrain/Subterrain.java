@@ -1,5 +1,6 @@
 package lolinder.subterrain;
 
+import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
@@ -14,6 +15,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
@@ -32,7 +34,7 @@ public class Subterrain {
 	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 16, 1.0F, 0, 0);
 	
 	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
-
+	public static final Block lantern = new BlockLantern(330, 0).setBlockName("subterrainLantern").setCreativeTab(CreativeTabs.tabDecorations);
 	// The instance of your mod that Forge uses.
 	@Instance("Generic")
 	public static Subterrain instance;
@@ -50,6 +52,9 @@ public class Subterrain {
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
 		
+		GameRegistry.registerBlock(lantern);
+		
+		LanguageRegistry.addName(lantern, "Lantern");
 		LanguageRegistry.addName(flintTool, "Flint Tool");
 	}
 
