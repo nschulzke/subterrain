@@ -31,7 +31,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 
-	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 160, 5.0F, 2, 15);
+	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 16, 5.0F, 2, 15);
 	
 	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
 	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subterrainLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
