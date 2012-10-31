@@ -4,6 +4,7 @@ import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
+import net.minecraft.src.ItemPickaxe;
 import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -34,7 +35,9 @@ public class Subterrain {
 	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 16, 5.0F, 2, 15);
 	
 	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
+	public static final Item flintPickaxe = new ItemPickaxe(3331, toolFLINT).setIconIndex(1).setItemName("flintPick");
 	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subterrainLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
+
 	// The instance of your mod that Forge uses.
 	@Instance("Generic")
 	public static Subterrain instance;
