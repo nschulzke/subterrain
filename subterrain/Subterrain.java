@@ -32,10 +32,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 
-	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 16, 5.0F, 2, 15);
+	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 159, 5.0F, 2, 15);
 	
 	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
-	public static final Item flintPickaxe = new ItemPickaxe(3331, toolFLINT).setIconIndex(1).setItemName("flintPick");
+	public static final Item flintPickaxe = new ItemFlintPick(3331, toolFLINT).setIconIndex(1).setItemName("flintPick");
 	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subterrainLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
 
 	// The instance of your mod that Forge uses.
@@ -59,6 +59,7 @@ public class Subterrain {
 		
 		LanguageRegistry.addName(lantern, "Lantern");
 		LanguageRegistry.addName(flintTool, "Flint Tool");
+		LanguageRegistry.addName(flintPickaxe, "Flint Pickaxe");
 	}
 
 	@PostInit
