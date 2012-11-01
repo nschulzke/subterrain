@@ -43,6 +43,9 @@ public class Subterrain {
 	static EnumToolMaterial toolGOLDBONE = EnumHelper.addToolMaterial("subGOLDBONE", 0, 48, 12.0F, 0, 24);
 	static EnumToolMaterial toolDIAMONDBONE = EnumHelper.addToolMaterial("subDIAMONDBONE", 3, 2047, 8.0F, 3, 12);
 	
+	// Add material items
+	public static final Item boneShard = new ItemBoneShard(3339).setIconIndex(21).setItemName("subBoneShard");
+	
 	// Add bitumen liquid
 	public static final Block bitumenFlowing = new BlockBitumenFlowing(431, Material.water);
 	public static final Block bitumenStill = new BlockBitumenStationary(432, Material.water);
@@ -62,6 +65,7 @@ public class Subterrain {
 	// Add miscellaneous items
 	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("subFlintTool");
 	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
+	public static final Block boneTorch = new BlockBoneTorch(434, 1).setBlockName("subBoneTorch").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
 	public static final Item bucketBitumen = new ItemBucketBitumen(3329).setIconIndex(20).setItemName("subBucketBitumen");
 	
 	// The instance of your mod that Forge uses.
@@ -82,10 +86,14 @@ public class Subterrain {
 		proxy.registerRenderers();
 		
 		GameRegistry.registerBlock(lantern);
+		GameRegistry.registerBlock(boneTorch);
 		GameRegistry.registerBlock(bitumenFlowing);
 		GameRegistry.registerBlock(bitumenStill);
 		
+		LanguageRegistry.addName(boneShard, "Bone Shard");
+		
 		LanguageRegistry.addName(lantern, "Lantern");
+		LanguageRegistry.addName(boneTorch, "Bone Torch");
 		LanguageRegistry.addName(bucketBitumen, "Bucket of Bitumen");
 		
 		LanguageRegistry.addName(flintTool, "Flint Tool");
