@@ -83,7 +83,7 @@ public class Subterrain {
 		LanguageRegistry.addName(stoneBoneAxe, "Stone Axe");
 		LanguageRegistry.addName(ironBoneAxe, "Iron Axe");
 		LanguageRegistry.addName(goldBoneAxe, "Gold Axe");
-		LanguageRegistry.addName(diamondBonePick, "Diamond Axe");
+		LanguageRegistry.addName(diamondBoneAxe, "Diamond Axe");
 	}
 
 	@PostInit
