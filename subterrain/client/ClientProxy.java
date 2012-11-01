@@ -1,7 +1,7 @@
 package lolinder.subterrain.client;
 
-import lolinder.subterrain.CommonProxy;
-import lolinder.subterrain.ItemFlintTool;
+import lolinder.subterrain.common.CommonProxy;
+import lolinder.subterrain.common.items.ItemFlintTool;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
