@@ -49,6 +49,12 @@ public class Subterrain {
 	public static final Item goldBonePick = new ItemBonePickaxe(3333, toolGOLDBONE).setIconIndex(3).setItemName("subGoldBonePick");
 	public static final Item diamondBonePick = new ItemBonePickaxe(3334, toolDIAMONDBONE).setIconIndex(4).setItemName("subDiamondBonePick");
 	
+	// Add bone axes
+	public static final Item stoneBoneAxe = new ItemBoneAxe(3335, toolSTONEBONE).setIconIndex(5).setItemName("subStoneBoneAxe");
+	public static final Item ironBoneAxe = new ItemBoneAxe(3336, toolIRONBONE).setIconIndex(6).setItemName("subIronBoneAxe");
+	public static final Item goldBoneAxe = new ItemBoneAxe(3337, toolGOLDBONE).setIconIndex(7).setItemName("subGoldBoneAxe");
+	public static final Item diamondBoneAxe = new ItemBoneAxe(3338, toolDIAMONDBONE).setIconIndex(8).setItemName("subDiamondBoneAxe");
+	
 	// The instance of your mod that Forge uses.
 	@Instance("Generic")
 	public static Subterrain instance;
@@ -74,6 +80,10 @@ public class Subterrain {
 		LanguageRegistry.addName(ironBonePick, "Iron Pickaxe");
 		LanguageRegistry.addName(goldBonePick, "Gold Pickaxe");
 		LanguageRegistry.addName(diamondBonePick, "Diamond Pickaxe");
+		LanguageRegistry.addName(stoneBoneAxe, "Stone Axe");
+		LanguageRegistry.addName(ironBoneAxe, "Iron Axe");
+		LanguageRegistry.addName(goldBoneAxe, "Gold Axe");
+		LanguageRegistry.addName(diamondBonePick, "Diamond Axe");
 	}
 
 	@PostInit
