@@ -32,12 +32,23 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 
-	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("FLINT", 1, 159, 5.0F, 2, 15);
+	// Add tool materials
+	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("oneFLINT", 1, 15, 1.0F, 0, 0);
+	static EnumToolMaterial toolSTONEBONE = EnumHelper.addToolMaterial("subSTONEBONE", 1, 262, 4.0F, 1, 7);
+	static EnumToolMaterial toolIRONBONE = EnumHelper.addToolMaterial("subIRONBONE", 2, 524, 6.0F, 2, 16);
+	static EnumToolMaterial toolGOLDBONE = EnumHelper.addToolMaterial("subGOLDBONE", 0, 48, 12.0F, 0, 24);
+	static EnumToolMaterial toolDIAMONDBONE = EnumHelper.addToolMaterial("subDIAMONDBONE", 3, 2047, 8.0F, 3, 12);
 	
-	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("flintTool");
-	public static final Item flintPickaxe = new ItemFlintPick(3331, toolFLINT).setIconIndex(1).setItemName("flintPick");
-	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subterrainLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
+	// Add miscellaneous items
+	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("subFlintTool");
+	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
 
+	// Add bone pickaxes
+	public static final Item stoneBonePick = new ItemBonePickaxe(3331, toolSTONEBONE).setIconIndex(1).setItemName("subStoneBonePick");
+	public static final Item ironBonePick = new ItemBonePickaxe(3332, toolIRONBONE).setIconIndex(2).setItemName("subIronBonePick");
+	public static final Item goldBonePick = new ItemBonePickaxe(3333, toolGOLDBONE).setIconIndex(3).setItemName("subGoldBonePick");
+	public static final Item diamondBonePick = new ItemBonePickaxe(3334, toolDIAMONDBONE).setIconIndex(4).setItemName("subDiamondBonePick");
+	
 	// The instance of your mod that Forge uses.
 	@Instance("Generic")
 	public static Subterrain instance;
@@ -59,7 +70,10 @@ public class Subterrain {
 		
 		LanguageRegistry.addName(lantern, "Lantern");
 		LanguageRegistry.addName(flintTool, "Flint Tool");
-		LanguageRegistry.addName(flintPickaxe, "Flint Pickaxe");
+		LanguageRegistry.addName(stoneBonePick, "Stone Pickaxe");
+		LanguageRegistry.addName(ironBonePick, "Iron Pickaxe");
+		LanguageRegistry.addName(goldBonePick, "Gold Pickaxe");
+		LanguageRegistry.addName(diamondBonePick, "Diamond Pickaxe");
 	}
 
 	@PostInit
