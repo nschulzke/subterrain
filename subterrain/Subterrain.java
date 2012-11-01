@@ -5,7 +5,11 @@ import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemPickaxe;
+import net.minecraft.src.MapColor;
+import net.minecraft.src.Material;
+import net.minecraft.src.MaterialLiquid;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -32,17 +36,17 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 
-	// Add tool materials
+	// Add materials
 	static EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("oneFLINT", 1, 15, 1.0F, 0, 0);
 	static EnumToolMaterial toolSTONEBONE = EnumHelper.addToolMaterial("subSTONEBONE", 1, 262, 4.0F, 1, 7);
 	static EnumToolMaterial toolIRONBONE = EnumHelper.addToolMaterial("subIRONBONE", 2, 524, 6.0F, 2, 16);
 	static EnumToolMaterial toolGOLDBONE = EnumHelper.addToolMaterial("subGOLDBONE", 0, 48, 12.0F, 0, 24);
 	static EnumToolMaterial toolDIAMONDBONE = EnumHelper.addToolMaterial("subDIAMONDBONE", 3, 2047, 8.0F, 3, 12);
 	
-	// Add miscellaneous items
-	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("subFlintTool");
-	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
-
+	// Add bitumen liquid
+	public static final Block bitumenFlowing = new BlockBitumenFlowing(431, Material.water);
+	public static final Block bitumenStill = new BlockBitumenStationary(432, Material.water);
+	
 	// Add bone pickaxes
 	public static final Item stoneBonePick = new ItemBonePickaxe(3331, toolSTONEBONE).setIconIndex(1).setItemName("subStoneBonePick");
 	public static final Item ironBonePick = new ItemBonePickaxe(3332, toolIRONBONE).setIconIndex(2).setItemName("subIronBonePick");
@@ -55,6 +59,11 @@ public class Subterrain {
 	public static final Item goldBoneAxe = new ItemBoneAxe(3337, toolGOLDBONE).setIconIndex(7).setItemName("subGoldBoneAxe");
 	public static final Item diamondBoneAxe = new ItemBoneAxe(3338, toolDIAMONDBONE).setIconIndex(8).setItemName("subDiamondBoneAxe");
 	
+	// Add miscellaneous items
+	public static final Item flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools).setItemName("subFlintTool");
+	public static final Block lantern = new BlockLantern(430, 0).setBlockName("subLantern").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(0.9375F).setHardness(0.0F).setStepSound(Block.soundWoodFootstep);
+	public static final Item bucketBitumen = new ItemBucketBitumen(3329).setIconIndex(20).setItemName("subBucketBitumen");
+	
 	// The instance of your mod that Forge uses.
 	@Instance("Generic")
 	public static Subterrain instance;
@@ -65,7 +74,7 @@ public class Subterrain {
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-		// Stub Method
+		MinecraftForge.EVENT_BUS.register(new HandlerBitumenBucket());
 	}
 
 	@Init
@@ -73,8 +82,12 @@ public class Subterrain {
 		proxy.registerRenderers();
 		
 		GameRegistry.registerBlock(lantern);
+		GameRegistry.registerBlock(bitumenFlowing);
+		GameRegistry.registerBlock(bitumenStill);
 		
 		LanguageRegistry.addName(lantern, "Lantern");
+		LanguageRegistry.addName(bucketBitumen, "Bucket of Bitumen");
+		
 		LanguageRegistry.addName(flintTool, "Flint Tool");
 		LanguageRegistry.addName(stoneBonePick, "Stone Pickaxe");
 		LanguageRegistry.addName(ironBonePick, "Iron Pickaxe");
