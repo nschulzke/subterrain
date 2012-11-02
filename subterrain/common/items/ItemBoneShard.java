@@ -48,9 +48,6 @@ public class ItemBoneShard extends Item {
 			
 			if ( clickedBlockID == ModBlocks.bitumenFlowing.blockID || clickedBlockID == ModBlocks.bitumenStill.blockID ) {
 				--itemStack.stackSize;
-				if (itemStack.stackSize <= 0) {
-					return new ItemStack(ModBlocks.boneTorch);
-				}
 				if (!player.inventory.addItemStackToInventory(new ItemStack(ModBlocks.boneTorch))) {
 					player.dropPlayerItem(new ItemStack(ModBlocks.boneTorch));
 				}

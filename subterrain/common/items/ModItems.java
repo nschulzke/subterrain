@@ -1,9 +1,11 @@
 package lolinder.subterrain.common.items;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.EnumHelper;
 
 /**
@@ -86,7 +88,10 @@ public class ModItems {
 	}
 	
 	private static void initRecipes() {
-		// To come later
+		// Define stacks
+		ItemStack oneBone = new ItemStack(Item.bone);
+		
+		GameRegistry.addRecipe(new ItemStack(boneShard, 4), "x ", "x ", 'x', oneBone);
 	}
 
 }
