@@ -27,8 +27,8 @@ public class ModItems {
 	public static final EnumToolMaterial toolDIAMONDBONE = EnumHelper.addToolMaterial("subDIAMONDBONE", 3, 2047, 8.0F, 3, 12);
 	
 	// Add material items
-	public static Item boneShard;
 	public static Item chunkBitumen;
+	public static Item bitumenInBucket;
 	
 	// Add pickaxes
 	public static Item flintTool;
@@ -52,7 +52,8 @@ public class ModItems {
 	public static void init() {
 		
 		// Initialize material items
-		chunkBitumen = new ItemChunkBitumen(3340).setIconIndex(21).setItemName("subChunkBitumen");
+		chunkBitumen = new ItemSubterrainMat(3339).setIconIndex(21).setItemName("subChunkBitumen");
+		bitumenInBucket = new ItemSubterrainMat(3340).setIconIndex(22).setItemName("subBitumenInBucket");
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
@@ -73,7 +74,7 @@ public class ModItems {
 		initRecipes();
 		
 		// Register names
-		LanguageRegistry.addName(boneShard, "Bone Shard");
+		LanguageRegistry.addName(bitumenInBucket, "Bitumen in a Bucket");
 		LanguageRegistry.addName(chunkBitumen, "Chunk of Bitumen");
 		LanguageRegistry.addName(bucketBitumen, "Bucket of Bitumen");
 		
@@ -91,9 +92,12 @@ public class ModItems {
 	
 	private static void initRecipes() {
 		// Define stacks
-		ItemStack oneBone = new ItemStack(Item.bone);
+		ItemStack oneBitChunk = new ItemStack(chunkBitumen);
+		ItemStack oneBucket = new ItemStack(Item.bucketEmpty);
+		ItemStack oneBucketBit = new ItemStack(bucketBitumen);
 		
-		GameRegistry.addRecipe(new ItemStack(boneShard, 4), "x ", "x ", 'x', oneBone);
+		GameRegistry.addRecipe(new ItemStack(bitumenInBucket), "x ", "y ", 'x', oneBitChunk, 'y', oneBucket);
+		GameRegistry.addSmelting(bitumenInBucket.shiftedIndex, oneBucketBit, 1.0F);
 	}
 
 }
