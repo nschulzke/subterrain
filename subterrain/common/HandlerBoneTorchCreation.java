@@ -42,7 +42,7 @@ public class HandlerBoneTorchCreation {
 					else
 						blockID = -1;
 					if ( blockID == ModBlocks.bitumenFlowing.blockID || blockID == ModBlocks.bitumenStill.blockID ) {
-						ItemStack result = new ItemStack(ModBlocks.boneTorch, 2);
+						ItemStack result = new ItemStack(ModBlocks.boneTorch, 4);
 						--stack.stackSize;
 						if (!player.inventory.addItemStackToInventory(result)) {
 								player.dropPlayerItem(result);

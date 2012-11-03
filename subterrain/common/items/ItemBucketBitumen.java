@@ -3,6 +3,7 @@ package lolinder.subterrain.common.items;
 import lolinder.subterrain.common.CommonProxy;
 import lolinder.subterrain.common.blocks.ModBlocks;
 import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.Item;
 import net.minecraft.src.ItemBucket;
 
 /**
@@ -19,6 +20,8 @@ public class ItemBucketBitumen extends ItemBucket {
 	public ItemBucketBitumen(int id) {
 		super(id, ModBlocks.bitumenFlowing.blockID);
 		setCreativeTab(CreativeTabs.tabMisc);
+		setContainerItem(Item.bucketEmpty);
+		setMaxStackSize(1);
 	}
 
 	@Override

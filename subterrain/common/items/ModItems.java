@@ -1,12 +1,12 @@
 package lolinder.subterrain.common.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.src.CreativeTabs;
+import lolinder.subterrain.common.blocks.ModBlocks;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
  * ModItems
@@ -53,7 +53,7 @@ public class ModItems {
 		
 		// Initialize material items
 		chunkBitumen = new ItemSubterrainMat(3339).setIconIndex(21).setItemName("subChunkBitumen");
-		bitumenInBucket = new ItemSubterrainMat(3340).setIconIndex(22).setItemName("subBitumenInBucket");
+		bitumenInBucket = new ItemSubterrainMat(3340).setIconIndex(22).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
@@ -95,9 +95,13 @@ public class ModItems {
 		ItemStack oneBitChunk = new ItemStack(chunkBitumen);
 		ItemStack oneBucket = new ItemStack(Item.bucketEmpty);
 		ItemStack oneBucketBit = new ItemStack(bucketBitumen);
+		ItemStack oneBitInBucket = new ItemStack(bitumenInBucket);
 		
-		GameRegistry.addRecipe(new ItemStack(bitumenInBucket), "x ", "y ", 'x', oneBitChunk, 'y', oneBucket);
+		GameRegistry.addRecipe(oneBitInBucket, "x ", "y ", 'x', oneBitChunk, 'y', oneBucket);
+		GameRegistry.addShapelessRecipe(new ItemStack(flintTool), Item.flint);
+		GameRegistry.addShapelessRecipe(oneBitChunk, oneBitInBucket);
 		GameRegistry.addSmelting(bitumenInBucket.shiftedIndex, oneBucketBit, 1.0F);
+		GameRegistry.addSmelting(ModBlocks.oreBitumen.blockID, oneBitChunk, 1.0F);
 	}
 
 }

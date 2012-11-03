@@ -63,6 +63,7 @@ public class Subterrain {
 		ModItems.init();
 		
 		GameRegistry.registerWorldGenerator(new WorldGen());
+		GameRegistry.registerFuelHandler(new HandlerFuel());
 	}
 
 	@PostInit
