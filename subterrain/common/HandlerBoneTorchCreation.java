@@ -31,17 +31,22 @@ public class HandlerBoneTorchCreation {
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 
 			EntityPlayer player = event.entityPlayer;
-			World world = player.worldObj;
-			MovingObjectPosition clicked = this.getMovingObjectPositionFromPlayer(world, player, true);
-			int blockID = world.getBlockId(clicked.blockX, clicked.blockY, clicked.blockZ);
 			ItemStack stack = player.getCurrentEquippedItem();
-			ItemStack result = new ItemStack(ModBlocks.boneTorch, 2);
-			
-			if ( blockID == ModBlocks.bitumenFlowing.blockID || blockID == ModBlocks.bitumenStill.blockID ) {
+			if (stack != null) {
 				if (stack.itemID == Item.bone.shiftedIndex) {
-					--stack.stackSize;
-					if (!player.inventory.addItemStackToInventory(result)) {
-						player.dropPlayerItem(result);
+					World world = player.worldObj;
+					MovingObjectPosition clicked = this.getMovingObjectPositionFromPlayer(world, player, true);
+					int blockID;
+					if (clicked != null)
+						blockID = world.getBlockId(clicked.blockX, clicked.blockY, clicked.blockZ);
+					else
+						blockID = -1;
+					if ( blockID == ModBlocks.bitumenFlowing.blockID || blockID == ModBlocks.bitumenStill.blockID ) {
+						ItemStack result = new ItemStack(ModBlocks.boneTorch, 2);
+						--stack.stackSize;
+						if (!player.inventory.addItemStackToInventory(result)) {
+								player.dropPlayerItem(result);
+						}
 					}
 				}
 			}
