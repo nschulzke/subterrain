@@ -31,20 +31,5 @@ public class BlockBitumenStationary extends BlockStationary {
 	public String getTextureFile () {
 		return CommonProxy.BLOCK_PNG;
 	}
-
-//	@Override
-//	public boolean onBlockActivated(World world, int i, int j,
-//			int k, EntityPlayer player, int l, float f,
-//			float g, float h) {
-//		ItemStack stack = player.getCurrentEquippedItem();
-//		ItemStack result = new ItemStack(ModBlocks.boneTorch, 2);
-//		if (stack.itemID == Item.bone.shiftedIndex) {
-//			--stack.stackSize;
-//			if (!player.inventory.addItemStackToInventory(result)) {
-//				player.dropPlayerItem(result);
-//			}
-//		}
-//		return false;
-//	}
 	
 }
