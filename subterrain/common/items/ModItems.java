@@ -28,6 +28,7 @@ public class ModItems {
 	
 	// Add material items
 	public static Item boneShard;
+	public static Item chunkBitumen;
 	
 	// Add pickaxes
 	public static Item flintTool;
@@ -51,7 +52,7 @@ public class ModItems {
 	public static void init() {
 		
 		// Initialize material items
-		boneShard = new ItemBoneShard(3339).setIconIndex(21).setItemName("subBoneShard");
+		chunkBitumen = new ItemChunkBitumen(3340).setIconIndex(21).setItemName("subChunkBitumen");
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
@@ -73,6 +74,7 @@ public class ModItems {
 		
 		// Register names
 		LanguageRegistry.addName(boneShard, "Bone Shard");
+		LanguageRegistry.addName(chunkBitumen, "Chunk of Bitumen");
 		LanguageRegistry.addName(bucketBitumen, "Bucket of Bitumen");
 		
 		LanguageRegistry.addName(flintTool, "Flint Tool");
