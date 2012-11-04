@@ -21,10 +21,6 @@ public class ModItems {
 	
 	// Add materials
 	public static final EnumToolMaterial toolFLINT = EnumHelper.addToolMaterial("oneFLINT", 1, 15, 1.0F, 0, 0);
-	public static final EnumToolMaterial toolSTONEBONE = EnumHelper.addToolMaterial("subSTONEBONE", 1, 262, 4.0F, 1, 7);
-	public static final EnumToolMaterial toolIRONBONE = EnumHelper.addToolMaterial("subIRONBONE", 2, 524, 6.0F, 2, 16);
-	public static final EnumToolMaterial toolGOLDBONE = EnumHelper.addToolMaterial("subGOLDBONE", 0, 48, 12.0F, 0, 24);
-	public static final EnumToolMaterial toolDIAMONDBONE = EnumHelper.addToolMaterial("subDIAMONDBONE", 3, 2047, 8.0F, 3, 12);
 	
 	// Add material items
 	public static Item chunkBitumen;
@@ -57,16 +53,16 @@ public class ModItems {
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
-		stoneBonePick = new ItemBonePickaxe(3331, toolSTONEBONE).setIconIndex(1).setItemName("subStoneBonePick");
-		ironBonePick = new ItemBonePickaxe(3332, toolIRONBONE).setIconIndex(2).setItemName("subIronBonePick");
-		goldBonePick = new ItemBonePickaxe(3333, toolGOLDBONE).setIconIndex(3).setItemName("subGoldBonePick");
-		diamondBonePick = new ItemBonePickaxe(3334, toolDIAMONDBONE).setIconIndex(4).setItemName("subDiamondBonePick");
+		stoneBonePick = new ItemBonePickaxe(3331, EnumToolMaterial.STONE).setIconIndex(1).setItemName("subStoneBonePick");
+		ironBonePick = new ItemBonePickaxe(3332, EnumToolMaterial.IRON).setIconIndex(2).setItemName("subIronBonePick");
+		goldBonePick = new ItemBonePickaxe(3333, EnumToolMaterial.GOLD).setIconIndex(3).setItemName("subGoldBonePick");
+		diamondBonePick = new ItemBonePickaxe(3334, EnumToolMaterial.EMERALD).setIconIndex(4).setItemName("subDiamondBonePick");
 		
 		// Initialize axes
-		stoneBoneAxe = new ItemBoneAxe(3335, toolSTONEBONE).setIconIndex(5).setItemName("subStoneBoneAxe");
-		ironBoneAxe = new ItemBoneAxe(3336, toolIRONBONE).setIconIndex(6).setItemName("subIronBoneAxe");
-		goldBoneAxe = new ItemBoneAxe(3337, toolGOLDBONE).setIconIndex(7).setItemName("subGoldBoneAxe");
-		diamondBoneAxe = new ItemBoneAxe(3338, toolDIAMONDBONE).setIconIndex(8).setItemName("subDiamondBoneAxe");
+		stoneBoneAxe = new ItemBoneAxe(3335, EnumToolMaterial.STONE).setIconIndex(5).setItemName("subStoneBoneAxe");
+		ironBoneAxe = new ItemBoneAxe(3336, EnumToolMaterial.IRON).setIconIndex(6).setItemName("subIronBoneAxe");
+		goldBoneAxe = new ItemBoneAxe(3337, EnumToolMaterial.GOLD).setIconIndex(7).setItemName("subGoldBoneAxe");
+		diamondBoneAxe = new ItemBoneAxe(3338, EnumToolMaterial.EMERALD).setIconIndex(8).setItemName("subDiamondBoneAxe");
 		
 		// Initialize misc items
 		bucketBitumen = new ItemBucketBitumen(3329).setIconIndex(20).setItemName("subBucketBitumen");

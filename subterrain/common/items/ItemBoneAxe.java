@@ -17,6 +17,8 @@ public class ItemBoneAxe extends ItemAxe {
 
 	public ItemBoneAxe(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
+		int damage = this.getMaxDamage();
+		this.setMaxDamage((int)(damage * 1.5));
 	}
 
 	@Override
@@ -24,5 +26,11 @@ public class ItemBoneAxe extends ItemAxe {
 	{
 		return CommonProxy.ITEMS_PNG;
 	}
+	
+	@Override
+    public int getItemEnchantability()
+    {
+        return this.toolMaterial.getEnchantability() + 2;
+    }
 
 }
