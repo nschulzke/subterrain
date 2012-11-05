@@ -60,7 +60,7 @@ public class ModBlocks {
 	}
 	
 	private static void initRecipes() {
-		GameRegistry.addRecipe(new ItemStack(stoneWorkbench), "xx", "xx", 'x', new ItemStack(Block.stone));
+		GameRegistry.addRecipe(new ItemStack(stoneWorkbench), "xx", "xx", 'x', new ItemStack(Block.cobblestone));
 	}
 
 }
