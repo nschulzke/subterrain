@@ -39,6 +39,12 @@ public class ModItems {
 	public static Item goldBoneAxe;
 	public static Item diamondBoneAxe;
 	
+	// Add bone shovels
+	public static Item stoneBoneShovel;
+	public static Item ironBoneShovel;
+	public static Item goldBoneShovel;
+	public static Item diamondBoneShovel;
+	
 	// Add misc items
 	public static Item bucketBitumen;
 
@@ -64,6 +70,12 @@ public class ModItems {
 		goldBoneAxe = new ItemBoneAxe(3337, EnumToolMaterial.GOLD).setIconIndex(7).setItemName("subGoldBoneAxe");
 		diamondBoneAxe = new ItemBoneAxe(3338, EnumToolMaterial.EMERALD).setIconIndex(8).setItemName("subDiamondBoneAxe");
 		
+		// Initialize shovels
+		stoneBoneShovel = new ItemBoneShovel(3335, EnumToolMaterial.STONE).setIconIndex(13).setItemName("subStoneBoneShovel");
+		ironBoneShovel = new ItemBoneShovel(3336, EnumToolMaterial.IRON).setIconIndex(14).setItemName("subIronBoneShovel");
+		goldBoneShovel = new ItemBoneShovel(3337, EnumToolMaterial.GOLD).setIconIndex(15).setItemName("subGoldBoneShovel");
+		diamondBoneShovel = new ItemBoneShovel(3338, EnumToolMaterial.EMERALD).setIconIndex(16).setItemName("subDiamondBoneShovel");
+		
 		// Initialize misc items
 		bucketBitumen = new ItemBucketBitumen(3329).setIconIndex(20).setItemName("subBucketBitumen");
 
@@ -83,6 +95,11 @@ public class ModItems {
 		LanguageRegistry.addName(ironBoneAxe, "Iron Axe");
 		LanguageRegistry.addName(goldBoneAxe, "Gold Axe");
 		LanguageRegistry.addName(diamondBoneAxe, "Diamond Axe");
+		
+		LanguageRegistry.addName(stoneBoneShovel, "Stone Shovel");
+		LanguageRegistry.addName(ironBoneShovel, "Iron Shovel");
+		LanguageRegistry.addName(goldBoneShovel, "Gold Shovel");
+		LanguageRegistry.addName(diamondBoneShovel, "Diamond Shovel");
 		
 	}
 	
