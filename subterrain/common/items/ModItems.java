@@ -39,6 +39,12 @@ public class ModItems {
 	public static Item goldBoneAxe;
 	public static Item diamondBoneAxe;
 	
+	// Add bone hoes
+	public static Item stoneBoneHoe;
+	public static Item ironBoneHoe;
+	public static Item goldBoneHoe;
+	public static Item diamondBoneHoe;
+	
 	// Add bone shovels
 	public static Item stoneBoneShovel;
 	public static Item ironBoneShovel;
@@ -54,8 +60,8 @@ public class ModItems {
 	public static void init() {
 		
 		// Initialize material items
-		chunkBitumen = new ItemSubterrainMat(3339).setIconIndex(21).setItemName("subChunkBitumen");
-		bitumenInBucket = new ItemSubterrainMat(3340).setIconIndex(22).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
+		chunkBitumen = new ItemSubterrainMat(3338).setIconIndex(21).setItemName("subChunkBitumen");
+		bitumenInBucket = new ItemSubterrainMat(3339).setIconIndex(22).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
@@ -70,11 +76,17 @@ public class ModItems {
 		goldBoneAxe = new ItemBoneAxe(3337, EnumToolMaterial.GOLD).setIconIndex(7).setItemName("subGoldBoneAxe");
 		diamondBoneAxe = new ItemBoneAxe(3338, EnumToolMaterial.EMERALD).setIconIndex(8).setItemName("subDiamondBoneAxe");
 		
+		// Initialize hoes
+		stoneBoneHoe = new ItemBoneHoe(3339, EnumToolMaterial.STONE).setIconIndex(9).setItemName("subStoneBoneHoe");
+		ironBoneHoe = new ItemBoneHoe(3340, EnumToolMaterial.IRON).setIconIndex(10).setItemName("subIronBoneHoe");
+		goldBoneHoe = new ItemBoneHoe(3341, EnumToolMaterial.GOLD).setIconIndex(11).setItemName("subGoldBoneHoe");
+		diamondBoneHoe= new ItemBoneHoe(3342, EnumToolMaterial.EMERALD).setIconIndex(12).setItemName("subDiamondBoneHoe");
+		
 		// Initialize shovels
-		stoneBoneShovel = new ItemBoneShovel(3335, EnumToolMaterial.STONE).setIconIndex(13).setItemName("subStoneBoneShovel");
-		ironBoneShovel = new ItemBoneShovel(3336, EnumToolMaterial.IRON).setIconIndex(14).setItemName("subIronBoneShovel");
-		goldBoneShovel = new ItemBoneShovel(3337, EnumToolMaterial.GOLD).setIconIndex(15).setItemName("subGoldBoneShovel");
-		diamondBoneShovel = new ItemBoneShovel(3338, EnumToolMaterial.EMERALD).setIconIndex(16).setItemName("subDiamondBoneShovel");
+		stoneBoneShovel = new ItemBoneShovel(3343, EnumToolMaterial.STONE).setIconIndex(13).setItemName("subStoneBoneShovel");
+		ironBoneShovel = new ItemBoneShovel(3344, EnumToolMaterial.IRON).setIconIndex(14).setItemName("subIronBoneShovel");
+		goldBoneShovel = new ItemBoneShovel(3345, EnumToolMaterial.GOLD).setIconIndex(15).setItemName("subGoldBoneShovel");
+		diamondBoneShovel = new ItemBoneShovel(3346, EnumToolMaterial.EMERALD).setIconIndex(16).setItemName("subDiamondBoneShovel");
 		
 		// Initialize misc items
 		bucketBitumen = new ItemBucketBitumen(3329).setIconIndex(20).setItemName("subBucketBitumen");
@@ -95,7 +107,10 @@ public class ModItems {
 		LanguageRegistry.addName(ironBoneAxe, "Iron Axe");
 		LanguageRegistry.addName(goldBoneAxe, "Gold Axe");
 		LanguageRegistry.addName(diamondBoneAxe, "Diamond Axe");
-		
+		LanguageRegistry.addName(stoneBoneHoe, "Stone Hoe");
+		LanguageRegistry.addName(ironBoneHoe, "Iron Hoe");
+		LanguageRegistry.addName(goldBoneHoe, "Gold Hoe");
+		LanguageRegistry.addName(diamondBoneHoe, "Diamond Hoe");
 		LanguageRegistry.addName(stoneBoneShovel, "Stone Shovel");
 		LanguageRegistry.addName(ironBoneShovel, "Iron Shovel");
 		LanguageRegistry.addName(goldBoneShovel, "Gold Shovel");
