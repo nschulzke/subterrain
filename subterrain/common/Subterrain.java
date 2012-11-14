@@ -35,7 +35,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
  */
-@Mod(modid="Subterrain", name="Subterrain", version="0.0.2")
+@Mod(modid="Subterrain", name="Subterrain", version="0.0.3")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Subterrain {
 

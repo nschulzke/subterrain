@@ -30,7 +30,7 @@ public class ItemBoneAxe extends ItemAxe {
 	@Override
     public int getItemEnchantability()
     {
-        return this.toolMaterial.getEnchantability() + 2;
+        return super.getItemEnchantability() + 2;
     }
 
 }

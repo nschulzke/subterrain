@@ -30,7 +30,7 @@ public class ItemBoneHoe extends ItemHoe {
 	@Override
     public int getItemEnchantability()
     {
-        return this.theToolMaterial.getEnchantability() + 2;
+        return super.getItemEnchantability() + 2;
     }
 
 }
