@@ -1,6 +1,7 @@
 package lolinder.subterrain.common.items;
 
 import lolinder.subterrain.common.blocks.ModBlocks;
+import net.minecraft.src.Block;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
@@ -125,11 +126,26 @@ public class ModItems {
 		ItemStack oneBucketBit = new ItemStack(bucketBitumen);
 		ItemStack oneBitInBucket = new ItemStack(bitumenInBucket);
 		
-		GameRegistry.addRecipe(oneBitInBucket, "x ", "y ", 'x', oneBitChunk, 'y', oneBucket);
+		GameRegistry.addRecipe(oneBitInBucket, "x", "y", 'x', oneBitChunk, 'y', oneBucket);
 		GameRegistry.addShapelessRecipe(new ItemStack(flintTool), Item.flint);
 		GameRegistry.addShapelessRecipe(oneBitChunk, oneBitInBucket);
 		GameRegistry.addSmelting(bitumenInBucket.shiftedIndex, oneBucketBit, 1.0F);
 		GameRegistry.addSmelting(ModBlocks.oreBitumen.blockID, oneBitChunk, 1.0F);
+		
+		String toolPatterns[][] = {{"xxx", " i ", " i "},{"xx", "xi", " i"},{"x", "i", "i"},{"xx", " i", " i"},{"x", "x", "i"}};
+		Object items[][] = {{Block.cobblestone, Item.ingotIron, Item.diamond, Item.ingotGold},
+				{stoneBonePick, ironBonePick, diamondBonePick, goldBonePick},
+				{stoneBoneAxe, ironBoneAxe, diamondBoneAxe, goldBoneAxe},
+				{stoneBoneShovel, ironBoneShovel, diamondBoneShovel, goldBoneShovel},
+				{stoneBoneHoe, ironBoneHoe, diamondBoneHoe, goldBoneHoe}};
+		
+		for (int i = 0; i < items[0].length; i++) {
+			Object material = items[0][i];
+			for (int j = 0; j < toolPatterns.length - 1; j++) {
+				Item result = (Item)items[j + 1][i];
+				GameRegistry.addRecipe(new ItemStack(result), new Object[] {toolPatterns[j], 'i', Item.bone, 'x', material});
+			}
+		}
 	}
 
 }
