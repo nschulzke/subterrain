@@ -67,8 +67,8 @@ public class ModItems {
 	public static void init() {
 		
 		// Initialize material items
-		chunkBitumen = new ItemSubterrainMat(3338).setIconIndex(22).setItemName("subChunkBitumen");
-		bitumenInBucket = new ItemSubterrainMat(3339).setIconIndex(23).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
+		chunkBitumen = new ItemSubterrainMat(3327).setIconIndex(22).setItemName("subChunkBitumen");
+		bitumenInBucket = new ItemSubterrainMat(3328).setIconIndex(23).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
