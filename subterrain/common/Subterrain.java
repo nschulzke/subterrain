@@ -55,13 +55,13 @@ public class Subterrain {
 	public void load(FMLInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(new HandlerBitumenBucket());
 		MinecraftForge.EVENT_BUS.register(new HandlerBoneTorchCreation());
-		
+
 		proxy.registerRenderers();
-		
+
 		ModBlocks.init();
-		
+
 		ModItems.init();
-		
+
 		GameRegistry.registerWorldGenerator(new WorldGen());
 		GameRegistry.registerFuelHandler(new HandlerFuel());
 	}
