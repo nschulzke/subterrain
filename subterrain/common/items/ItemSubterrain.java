@@ -19,13 +19,12 @@ import net.minecraft.src.World;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
  */
-public class ItemSubterrainMat extends Item {
+public class ItemSubterrain extends Item {
 
-	public ItemSubterrainMat(int id) {
+	public ItemSubterrain(int id) {
 		super(id);
-		setCreativeTab(CreativeTabs.tabMaterials);
+		setCreativeTab(CreativeTabs.tabMisc);
 	}
-	
 
 	@Override
 	public String getTextureFile()

@@ -2,6 +2,7 @@ package lolinder.subterrain.common.items;
 
 import lolinder.subterrain.common.blocks.ModBlocks;
 import net.minecraft.src.Block;
+import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
@@ -60,6 +61,7 @@ public class ModItems {
 	
 	// Add misc items
 	public static Item bucketBitumen;
+	public static Item stoneBowl;
 
 	// Prevent instantiation
 	private ModItems() {}
@@ -67,8 +69,8 @@ public class ModItems {
 	public static void init() {
 		
 		// Initialize material items
-		chunkBitumen = new ItemSubterrainMat(3327).setIconIndex(22).setItemName("subChunkBitumen");
-		bitumenInBucket = new ItemSubterrainMat(3328).setIconIndex(23).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
+		chunkBitumen = new ItemSubterrain(3327).setCreativeTab(CreativeTabs.tabMaterials).setIconIndex(22).setItemName("subChunkBitumen");
+		bitumenInBucket = new ItemSubterrain(3328).setCreativeTab(CreativeTabs.tabMaterials).setIconIndex(23).setItemName("subBitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
 		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setIconIndex(0).setItemName("subFlintTool");
@@ -96,8 +98,6 @@ public class ModItems {
 		diamondBoneShovel = new ItemBoneShovel(3346, EnumToolMaterial.EMERALD).setIconIndex(16).setItemName("subDiamondBoneShovel");
 		
 		// Initialize swords
-		
-		// Initialize shovels
 		stoneBoneSword = new ItemBoneSword(3347, EnumToolMaterial.STONE).setIconIndex(17).setItemName("subStoneBoneSword");
 		ironBoneSword = new ItemBoneSword(3348, EnumToolMaterial.IRON).setIconIndex(18).setItemName("subIronBoneSword");
 		goldBoneSword = new ItemBoneSword(3349, EnumToolMaterial.GOLD).setIconIndex(19).setItemName("subGoldBoneSword");
@@ -105,6 +105,7 @@ public class ModItems {
 		
 		// Initialize misc items
 		bucketBitumen = new ItemBucketBitumen(3329).setIconIndex(21).setItemName("subBucketBitumen");
+		stoneBowl = new ItemSubterrain(3351).setIconIndex(24).setItemName("subStoneBowl");
 
 		initRecipes();
 		
@@ -112,6 +113,7 @@ public class ModItems {
 		LanguageRegistry.addName(bitumenInBucket, "Bitumen in a Bucket");
 		LanguageRegistry.addName(chunkBitumen, "Chunk of Bitumen");
 		LanguageRegistry.addName(bucketBitumen, "Bucket of Bitumen");
+		LanguageRegistry.addName(bucketBitumen, "Stone Bowl");
 		
 		LanguageRegistry.addName(flintTool, "Flint Tool");
 		LanguageRegistry.addName(stoneBonePick, "Stone Pickaxe");

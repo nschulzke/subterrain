@@ -29,6 +29,7 @@ public class ModBlocks {
 	public static Block blockLightstone;
 	public static Block blockDimstone;
 	public static Block blockDarkstone;
+	public static Block boneLadder;
 	
 	// Prevent instantiation
 	private ModBlocks() {}
@@ -45,7 +46,8 @@ public class ModBlocks {
 		blockLightstone = new BlockMod(440, 8, Material.rock).setBlockName("subBlockLightstone").setLightValue(1.0F).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
 		blockDimstone = new BlockMod(441, 9, Material.rock).setBlockName("subBlockDimstone").setLightValue(0.5F).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
 		blockDarkstone = new BlockMod(442, 10, Material.rock).setBlockName("subBlockDarkstone").setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
-
+		boneLadder = new BlockBoneLadder(443, 11).setBlockName("subBoneLadder");
+		
 		// Register blocks
 		GameRegistry.registerBlock(lantern);
 		GameRegistry.registerBlock(boneTorch);
@@ -56,6 +58,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(blockLightstone);
 		GameRegistry.registerBlock(blockDimstone);
 		GameRegistry.registerBlock(blockDarkstone);
+		GameRegistry.registerBlock(boneLadder);
 		
 		MinecraftForge.setBlockHarvestLevel(oreBitumen, "pickaxe", 0);
 		
@@ -69,6 +72,7 @@ public class ModBlocks {
 		LanguageRegistry.addName(blockLightstone, "Lightstone");
 		LanguageRegistry.addName(blockDimstone, "Dimstone");
 		LanguageRegistry.addName(blockDarkstone, "Darkstone");
+		LanguageRegistry.addName(boneLadder, "Bone Ladder");
 		
 	}
 	
